@@ -19,6 +19,7 @@ h1{
     color: aliceblue;
     text-align: center;
     border-style: double;
+    width: 100%
 }
 .titre{
 	text-align: center;
@@ -26,4 +27,30 @@ h1{
 
 .test{
 	    margin-left: 900px;
+}
+.all_friends {
+	border-style: inset;
+	width: 250px;
+	text-align: center;
+	display: inline-block;
+}
+.all_users{
+	border-style: inset;
+	width: 300px;
+	text-align: center;
+	display: inline-block;
+}
+ul{
+	list-style:none;
+	margin-left:0;
+	padding-left:0;
+}
+.devise{
+	display: inline-block;
+	border-style: groove;
+    background-color: darkslategrey;
+    border: 0px;
+    color: aliceblue;
+    text-align: center;
+    width: 250px;
 }

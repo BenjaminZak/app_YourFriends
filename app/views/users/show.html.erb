@@ -19,7 +19,7 @@
   <h2>Mes amis</h2>
   <ul>
     <%@friendship.each do |friend|%>
-       <li> <%= User.find(friend.new_friend).try(:firstname)%> : <%= User.find(friend.new_friend).email%> <%= link_to "Supprimer", friend, :method => :delete %>
+       <li> <%= User.find(friend.new_friend).try(:firstname)%> <%= User.find(friend.new_friend).email%> <%= link_to "Supprimer", friend, :method => :delete %>
     <%end%>
   </ul>
 </div>
