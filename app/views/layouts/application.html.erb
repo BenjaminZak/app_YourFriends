@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestYourfriends</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="user_nav">
+		<h1>YourFriends</h1>
+		<% if user_signed_in? %>
+			<%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %>
+			<%= link_to "Mon profil", profil_path(current_user.id) %>
+			<%= link_to 'Modifier mon profil', users_edit_path(current_user.id) %>
+		<% else %>
+			<%= link_to "S'enregistrer", new_user_registration_path %> ou <%= link_to "Se connecter", new_user_session_path %>
+		<% end %>
+	</div>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>

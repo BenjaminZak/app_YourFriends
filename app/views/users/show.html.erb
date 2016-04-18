@@ -1,0 +1,25 @@
+<div class="titre">
+<h2>Voici votre page de profil <%= @user.email%></h2>
+</div>
+
+<div class="all_users">
+  <h2>Tous les utilisateurs</h2>
+    
+   <ul>
+    <%@users.each do |user|%>
+      <% if user.email !=current_user.email%>
+           <li> <%= user.email%>
+            <%= link_to "Ajouter en ami", friends_path(:new_friend => user), :method => :post %>
+      <%end%>
+    <%end%>
+  </ul>
+</div>
+
+<div class="all_friends">
+  <h2>Mes amis</h2>
+  <ul>
+    <%@friendship.each do |friend|%>
+       <li> <%= User.find(friend.new_friend).try(:firstname)%> : <%= User.find(friend.new_friend).email%> <%= link_to "Supprimer", friend, :method => :delete %>
+    <%end%>
+  </ul>
+</div>
